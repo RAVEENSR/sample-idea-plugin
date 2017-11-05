@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
+    }
+
+}
+
+plugins {
+    id "org.jetbrains.intellij" version "0.2.17"
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+sourceCompatibility = 1.8
+group 'org.myorg'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'org.jetbrains.intellij'
+intellij {
+    //For a full list of IntelliJ IDEA releases, please see https://www.jetbrains.com/intellij-repository/releases.
+    version 'IC-2017.2.5'
+    pluginName 'Sample-Plugin'
+    updateSinceUntilBuild false
+    plugins 'coverage' //Bundled plugin dependencies
+}
